@@ -9,24 +9,19 @@ main {
     align-items: center;
     
 }
-fieldset{
-display: block;
-    unicode-bidi: isolate;
-    margin: 0;
-    flex-direction:row;
-}
+
 
 .form-row {
   display: flex;
-  gap: 20px;        /* space between the two fields */
-  margin-bottom: 15px;
+  gap: 20px;        /* space between the the text area boxes */
+  margin-bottom: 15px; /* space below the text area boxes */
 
 }
 
 .form-row div {
   flex: 1;          /* make both the dropdown and textbox equal width */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* makes it horizontally alligned 3times */
 }
 
 input[type="text"],
@@ -36,10 +31,7 @@ input[type="email"] {
   box-sizing: border-box;
 }
 
-.form-section {
-  align-items: flex-start; /* aligns labels evenly */
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
-}
+
 .form-group {
   flex: 1; /* makes both equal width */
   display: flex;
@@ -48,8 +40,8 @@ input[type="email"] {
 
 .form-group select,
 .form-group input[type="text"] {
-  padding: 8px;
-  box-sizing: border-box;
+  padding: 8px; /* makes the How did we meet drop down bigger */
+  box-sizing: border-box; /* spacing between how did we meet and other */
 }
 
 label {
@@ -61,18 +53,9 @@ label {
 }
 
 
-label {
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-
 .radio-options {
   display: flex;
 }
-
-
-
 
 button {
   display: block;
