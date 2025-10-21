@@ -9,6 +9,7 @@ const PORT = 3004;
 
 // Tell the app to encode data into JSON format
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static ('public'));
 
 // Set your view (templating) engine to "EJS"
 // (We use a templating engine to create dynamic web pages)
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 	console.log("Hello, world - server!");
 
     // Return home page
-    res.render('home');
+    res.render('index');
 });
 
 // Define a "confirm" route, using the POST method
