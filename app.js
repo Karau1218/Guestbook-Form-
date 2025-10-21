@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // Define a port number for the app to listen on
-const PORT = 3002;
+const PORT = 3004;
 
 // Tell the app to encode data into JSON format
 app.use(express.urlencoded({ extended: false }));
