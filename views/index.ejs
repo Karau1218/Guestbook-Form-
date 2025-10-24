@@ -11,23 +11,27 @@
 <body>
     <main>
   <h1>Contact Form</h1>
-  <form id="contact-form" action="#" method="post">
+  <form id="contact-form" action="/confirm" method="post">
 
     <!-- Personal Information -->
 <div class="form-row">
   <div class="first-row">
-    <label for="fname">First Name <span class="required"></span></label>
-    <input type="text" id="fname" name="fname" placeholder="e.g. Fredrick" required >
+    <label for="fname">First Name </label>
+    <input type="text" id="fname" name="fname" placeholder="e.g. Fredrick">
+  <span class="error" id="error-fname"></span>
+
   </div>
 
   <div class="last-row">
-    <label for="lname">Last Name <span class="required"></span></label>
-    <input type="text" id="lname" name="lname" placeholder="e.g. Karau" required>
+    <label for="lname">Last Name </label>
+    <input type="text" id="lname" name="lname" placeholder="e.g. Karau">
+  <span class="error" id="error-lname"></span>
+
   </div>
 
   <div class="email-row">
-    <label for="job-title">Job Title <span class="required"></span></label>
-    <input type="text" id="job-title" name="job-title" placeholder="e.g. Software Engineer" required>
+    <label for="job-title">Job Title </label>
+    <input type="text" id="job-title" name="job-title" placeholder="e.g. Software Engineer">
   </div>
 </div>
 
@@ -35,18 +39,22 @@
    <!-- Job Information -->
 <div class="form-row">
   <div class="company-row">
-    <label for="company">Company Name <span class="required"></span></label>
-    <input type="text" id="company" name="company" placeholder="e.g. ABC Corp" required>
+    <label for="company">Company Name</label>
+    <input type="text" id="company" name="company" placeholder="e.g. ABC Corp">
   </div>
 
   <div class="linkedin-row">
     <label for="linkedin">LinkedIn URL <span class="optional"></span></label>
     <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname">
+    <span class="error" id="error-linkedin"></span>
+
   </div>
 
   <div class="email-row">
-    <label for="email">Email Address <span class="required"></span></label>
-    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+    <label for="email">Email Address </label>
+    <input type="email" id="email" name="email" placeholder="example@email.com">
+    <span class="error" id="error-email"></span>
+
   </div>
 </div>
 
@@ -65,6 +73,8 @@
         <option value="event">Event</option>
         <option value="other">Other</option>
       </select>
+      <span class="error" id="error-meet"></span>
+
     </div>
 
     <div class="form-group">
@@ -78,24 +88,24 @@
 
     <!-- Message -->
     <div class="form-section">
-      <label for="message"> Message <span class="required"></span></label>
+      <label for="message"> Message</label>
 
       <div class="form-row">
-        <textarea id="message" name="message" cols="125" rows="4" placeholder="Type your message here..." required></textarea>
+        <textarea id="message" name="message" cols="125" rows="4" placeholder="Type your message here..."></textarea>
       </div>
       </div>
 
 <div class="form-section">
   <div class="form-group checkbox-group">
     <label>
-      <input type="checkbox" name="mailingList">
+      <input type="checkbox" id="mailingList" name="mailingList">
       Please add me to your mailing list
     </label>
-  </div>
+    
 
   <div class="form-group radio-group">
     <label class="label-text">Choose an email format:</label>
-    <div class="radio-options">
+      
       <label><input type="radio" name="emailFormat" value="html" > HTML</label>
       <label><input type="radio" name="emailFormat" value="text" > Text</label>
     </div>
