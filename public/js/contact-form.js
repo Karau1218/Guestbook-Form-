@@ -1,4 +1,4 @@
-// Run validation when form is submitted
+// this is for running validation when form is submitted
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("contact-form");
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function isValid() {
-  // Get form values
+  // The form values with id's
   const fname = document.getElementById("fname").value.trim();
   const lname = document.getElementById("lname").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -18,7 +18,7 @@ function isValid() {
   const meet = document.getElementById("meet").value;
   const mailingList = document.getElementById("mailingList").checked;
 
-  // Get error span elements
+  // Get error span elements of the form values
   const errorFname = document.getElementById("error-fname");
   const errorLname = document.getElementById("error-lname");
   const errorEmail = document.getElementById("error-email");
@@ -45,7 +45,7 @@ function isValid() {
     valid = false;
   }
 
-  // Email validation helper
+  // Email validation helper 
   const validateEmail = (email) => {
     return email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   };
@@ -62,7 +62,7 @@ function isValid() {
     valid = false;
   }
 
-  // LinkedIn optional, but must start correctly if provided
+  // LinkedIn is optional, but it must start correctly if provided
   if (linkedin !== "" && !linkedin.startsWith("https://linkedin.com/in/")) {
     errorLinkedin.textContent = "LinkedIn URL must start with https://linkedin.com/in/";
     valid = false;
@@ -77,7 +77,7 @@ function isValid() {
   return valid;
 }
 
-// Show/hide “Other” textbox
+// for Showing /hiding “Other” textbox
 const meetSelect = document.getElementById("meet");
 const otherField = document.getElementById("other");
 
@@ -89,7 +89,7 @@ meetSelect.addEventListener("change", function() {
   }
 });
 
-// Show/hide email format when mailing list checked
+// for Showing /hiding email format when mailing list checked
 const mailingListCheckbox = document.getElementById("mailingList");
 const radioGroup = document.querySelector(".radio-group");
 
