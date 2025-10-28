@@ -15,6 +15,9 @@ app.use(express.static ('public'));
 // (We use a templating engine to create dynamic web pages)
 app.set('view engine', 'ejs');
 
+// for storing submissions
+let orders = [];
+
 // Define a "default" route, 
 // e.g. jshmo.greenriverdev.com/reservation-app/
 app.get('/', (req, res) => {
@@ -31,8 +34,15 @@ app.post('/confirm', (req, res) => {
     // from the body of the request object
     let details = req.body;
 
+    orders.push(details)
+
     // Display the confirm page, pass the data
     res.render('confirm', { details: details });
+})
+
+// for admin route -submissions:
+app.get('/admin', (req, res) => {
+    res.send('admin', {orders: orders }); // for showing data in admin ejs
 })
 
 // Tell the app to listen for requests on the designated port
