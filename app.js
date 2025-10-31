@@ -34,7 +34,7 @@ app.post('/confirm', (req, res) => {
     // from the body of the request object
     let details = req.body;
 
-    orders.push(details)
+    orders.push(details) // this is so the admin can see the submissions
 
     // Display the confirm page, pass the data
     res.render('confirm', { details: details });
@@ -42,7 +42,7 @@ app.post('/confirm', (req, res) => {
 
 // for admin route -submissions:
 app.get('/admin', (req, res) => {
-    res.send('admin', {orders: orders }); // for showing data in admin ejs
+    res.send('admin', {orders }); // for showing data in admin ejs
 })
 
 // Tell the app to listen for requests on the designated port
