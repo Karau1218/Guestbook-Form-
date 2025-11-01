@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Page</title>
+  <!-- added Stylesheet for styling-->
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <h1>Thank you for contacting us!</h1>
-  <p>This is the admin page.</p>
-  <a href="/">Back to form</a>
+  <main>
+    <h1>Guestbook Submissions</h1>
+
+    <% if (orders.length === 0) { %>
+      <p>No submissions yet.</p>
+    <% } else { %>
+      <!--Added table for the submissions of all the data-->
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>LinkedIn</th>
+            <th>Email</th>
+            <th>How We Met</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% orders.forEach(order => { %>
+            <tr>
+              <td><%= order.fname %></td>
+              <td><%= order.lname %></td>
+              <td><%= order['job-title'] %></td>
+              <td><%= order.company %></td>
+              <td><a href="<%= order.linkedin %>" target="_blank"><%= order.linkedin %></a></td>
+              <td><%= order.email %></td>
+              <td><%= order.meet %></td>
+              <td><%= order.message %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </main>
 </body>
 </html>
