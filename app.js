@@ -28,16 +28,24 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// Contact form page
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+
 // Define a "confirm" route, using the POST method
 app.post('/confirm', (req, res) => {
     // Get the data from the form that was submitted
     // from the body of the request object
     let details = req.body;
+    details.timestamp = new Date().toLocaleString(); // for the timestamp
+
 
     orders.push(details) // this is so the admin can see the submissions from the form
 
     // Display the confirm page, pass the data
-    res.render('confirm', { details: details });
+    res.render('confirm', {details});
 })
 
 // for admin route -submissions:
