@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Form Submitted</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <h1><Thank you, <%= details.fname %> <%= details.lname %>!</h1>
-  <!--included message-->
-<p>Your message: "<%= details.message %>" has been added to the guestbook.</p>
+  <%- include('partials/navbar'); %>
 
-<!--this is a GO BACK to the navigation of th eform-->
-  <form action="/" method="GET">
-    <button type="submit">Go Back to Form</button>
-  </form>
+  <main>
+    <h1>Thank you, <%= details.fname %> <%= details.lname %>!</h1>
+    <p>Your message has been submitted successfully on <%= details.timestamp %>.</p>
+
+    <h3>Submission Details:</h3>
+    <ul>
+      <li><strong>Job Title:</strong> <%= details['job-title'] %></li>
+      <li><strong>Company:</strong> <%= details.company %></li>
+      <li><strong>LinkedIn:</strong> <a href="<%= details.linkedin %>" target="_blank"><%= details.linkedin %></a></li>
+      <li><strong>Email:</strong> <%= details.email %></li>
+      <li><strong>How We Met:</strong> <%= details.meet %></li>
+      <li><strong>Message:</strong> <%= details.message %></li>
+    </ul>
+
+    <a href="/contact"><button>Submit Another</button></a>
+  </main>
 </body>
 </html>
