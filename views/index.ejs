@@ -2,124 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
-  <link rel="icon" href="images/guestbook.png">
-  <link rel="stylesheet" href="styles/styles.css">
-  <script src="js/contact-form.js" defer></script>
+  <title>My Resume</title>
+  <link rel="icon" href="Image2.png" >
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-  <h1>Contact Form</h1>
-  <form id="contact-form" action="/confirm" method="post">
-
-    <!-- Personal Information -->
-<div class="form-row">
-  <div class="first-row">
-    <label for="fname">First Name </label>
-    <input type="text" id="fname" name="fname" placeholder="e.g. Fredrick">
-  <span class="error" id="error-fname"></span>
-
-  </div>
-
-  <div class="last-row">
-    <label for="lname">Last Name </label>
-    <input type="text" id="lname" name="lname" placeholder="e.g. Karau">
-  <span class="error" id="error-lname"></span>
-
-  </div>
-
-  <div class="email-row">
-    <label for="job-title">Job Title </label>
-    <input type="text" id="job-title" name="job-title" placeholder="e.g. Software Engineer">
-  </div>
-</div>
-
-
-   <!-- Job Information -->
-<div class="form-row">
-  <div class="company-row">
-    <label for="company">Company Name</label>
-    <input type="text" id="company" name="company" placeholder="e.g. ABC Corp">
-  </div>
-
-  <div class="linkedin-row">
-    <label for="linkedin">LinkedIn URL <span class="optional"></span></label>
-    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname">
-    <span class="error" id="error-linkedin"></span>
-
-  </div>
-
-  <div class="email-row">
-    <label for="email">Email Address </label>
-    <input type="email" id="email" name="email" placeholder="example@email.com">
-    <span class="error" id="error-email"></span>
-
-  </div>
-</div>
-
-
-
-   <!-- How did we meet -->
-<div class="form-section">
-  <div class="form-row">
-    <div class="form-group">
-      <label for="meet">How Did We Meet?</label>
-      <select name="meet" id="meet">
-        <option value="">Please select</option>
-        <option value="social-media">Social Media</option>
-        <option value="online">Online</option>
-        <option value="referral">Referral</option>
-        <option value="event">Event</option>
-        <option value="other">Other</option>
-      </select>
-      <span class="error" id="error-meet"></span>
-
-    </div>
-
-    <div class="form-group">
-      <label for="other">Other (Please Specify)</label>
-      <input type="text" id="other" name="other" placeholder="Please specify">
-    </div>
-  </div>
-</div>
-
-
-
-    <!-- Message -->
-    <div class="form-section">
-      <label for="message"> Message</label>
-
-      <div class="form-row">
-        <textarea id="message" name="message" cols="125" rows="4" placeholder="Type your message here..."></textarea>
-      </div>
-      </div>
-
-<div class="form-section">
-  <div class="form-group checkbox-group">
-    <label>
-      <input type="checkbox" id="mailingList" name="mailingList">
-      Please add me to your mailing list
-    </label>
+    <header>
+        <img src="Image1.png" alt="Profile Picture">
+  <h1 class="resume-title">FREDRICK KARAU RESUME</h1>
+<ul class="summary-list">
+    <li>Email: <a href="mailto:Frednicki76@gmail.com">Frednicki76@gmail.com</a></li>
+    <li>Phone: <a href="tel:4252409352">425-240-9352</a></li>
+    <li>Location: <a href="https://www.google.com/maps/place/Tacoma,+USA" target="_blank">Tacoma, USA</a></li>
+</ul>
+</header>
+<main>
+    <br>
+    <hr> 
+    <div class="resume-container">
+        
+    <div class="right-section">
+    <h1>Education</h1>
+    <h2>Bachelors in Software Development "Computer Science" </h2>
+    <p>Green River Community College</p>
     
-
-  <div class="form-group radio-group">
-    <label class="label-text">Choose an email format:</label>
-      
-      <label><input type="radio" name="emailFormat" value="html" > HTML</label>
-      <label><input type="radio" name="emailFormat" value="text" > Text</label>
+    <h2>Non - Degree Courses</h2>
+    <p>Grand Canyon University</p>
+    
+    <h2>Associates in Information Technology </h2>
+    <p>Green River Community College</p>
+    <br>
     </div>
-  </div>
+
+    
+    <div class="left-section">
+    <h1>Skills and Certifications</h1>
+    <ul>
+        <li>Languages: Java, Python, SQL, JavaScript</li>
+        <li>Web: HTML/CSS</li>
+        <li>Tools: Git, Eclipse, Linux</li>
+        <li>Agile: pair programming, working in sprints</li>
+    </ul>
+    </div>  
+    </div>
+<div class="experience-container">
+<div class="right-section">
+    <h1>Experience</h1>
+    
+       
+    <h2>Direct Support Professional.</h2>
+    <h3>Hope Human Services</h3>
+    <ul>
+        <li>Provided personal care and assistance to individuals with developmental disabilities</li>
+        <li>Assisted with daily living activities such as bathing, dressing, and meal preparation</li>
+        <li>Supervised and supported clients according to individual support plans</li>
+    </ul>
+
+    <h2>Medical Logistic Specialist.</h2>
+    <h3>U.S. Air Force Reserve. </h3>
+    <ul>
+        <li>Responsible for receiving, storing, and issuing medical supplies</li>
+        <li>Managed budgets, ordered, and inventoried supplies using machinery like forklifts.</li>
+        <li>Performed quality control checks.</li>
+    </ul>
+
+    <h2>Warehouse Worker.</h2>
+    <h3>Worldwide Flight Services.</h3>
+    <ul>
+        <li>Managed air cargo movement within the warehouse.</li>
+        <li>Performed loading and unloading of cargo for flights and trucks</li>
+        <li>Operated basic cargo handling equipment such as pallet jacks.</li>
+    </ul>
+
+    <h2>Cashier.</h2>
+    <h3>Burger King.</h3>
+    <ul>
+        <li>Arranged food items and processed orders for customers</li>
+        <li>Handled cash register operations and ensured order accuracy</li>
+        <li>Checked completed orders for accuracy and bagged meals for easy carrying</li>
+    </ul>
 </div>
 
-
-
-    <!-- Submit -->
-    <div class="form-section">
-      <button type="submit" id="order-button">Submit</button>
-    </div>
-
-  </form>
-  </main>
+    <div class="left-section">
+    <h1>Achievements and Activities</h1>
+    <h2>Consistently earned high GPAs</h2>
+    <ul>
+        <li>Maintained a GPA above 3.7 across multiple degree programs (IT, and Software Development coursework).</li>
+    </ul>
+    <h2>Improved Client Independence</h2>
+    <ul>
+        <li>Helped multiple clients achieve personal milestones in independent living as a Direct Support Professional.</li>
+    </ul>
+    <h2>Led Supply Chain Process Improvements</h2>
+    <ul>
+        <li>Streamlined restocking and tracking procedures at McChord AFB, contributing to faster turnaround and fewer shortages.</li>
+    </ul>
+    <h2>Initiated and Completed Self-Directed Learning</h2>
+    <ul>
+        <li>Completed independent coursework at Grand Canyon University while working and serving in the military, showing strong time management and discipline.</li>
+    </ul>
+</div>
+</div>
+</main>
 </body>
 </html>

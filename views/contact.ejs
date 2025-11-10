@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="icon" href="images/guestbook.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="js/contact-form.js" defer></script>
+</head>
+<body>
+    <%- include('partials/navbar'); %>
+    <main>
+  <h1>Contact Form</h1>
+  <form id="contact-form" action="/confirm" method="post">
+
+    <!-- Personal Information -->
+<div class="form-row">
+  <div class="first-row">
+    <label for="fname">First Name </label>
+    <input type="text" id="fname" name="fname" placeholder="e.g. Fredrick">
+  <span class="error" id="error-fname"></span>
+
+  </div>
+
+  <div class="last-row">
+    <label for="lname">Last Name </label>
+    <input type="text" id="lname" name="lname" placeholder="e.g. Karau">
+  <span class="error" id="error-lname"></span>
+
+  </div>
+
+  <div class="email-row">
+    <label for="job-title">Job Title </label>
+    <input type="text" id="job-title" name="job-title" placeholder="e.g. Software Engineer">
+  </div>
+</div>
+
+
+   <!-- Job Information -->
+<div class="form-row">
+  <div class="company-row">
+    <label for="company">Company Name</label>
+    <input type="text" id="company" name="company" placeholder="e.g. ABC Corp">
+  </div>
+
+  <div class="linkedin-row">
+    <label for="linkedin">LinkedIn URL <span class="optional"></span></label>
+    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname">
+    <span class="error" id="error-linkedin"></span>
+
+  </div>
+
+  <div class="email-row">
+    <label for="email">Email Address </label>
+    <input type="email" id="email" name="email" placeholder="example@email.com">
+    <span class="error" id="error-email"></span>
+
+  </div>
+</div>
+
+
+
+   <!-- How did we meet -->
+<div class="form-section">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="meet">How Did We Meet?</label>
+      <select name="meet" id="meet">
+        <option value="">Please select</option>
+        <option value="social-media">Social Media</option>
+        <option value="online">Online</option>
+        <option value="referral">Referral</option>
+        <option value="event">Event</option>
+        <option value="other">Other</option>
+      </select>
+      <span class="error" id="error-meet"></span>
+
+    </div>
+
+    <div class="form-group">
+      <label for="other">Other (Please Specify)</label>
+      <input type="text" id="other" name="other" placeholder="Please specify">
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Message -->
+    <div class="form-section">
+      <label for="message"> Message</label>
+
+      <div class="form-row">
+        <textarea id="message" name="message" cols="125" rows="4" placeholder="Type your message here..."></textarea>
+      </div>
+      </div>
+
+<div class="form-section">
+  <div class="form-group checkbox-group">
+    <label>
+      <input type="checkbox" id="mailingList" name="mailingList">
+      Please add me to your mailing list
+    </label>
+    
+
+  <div class="form-group radio-group">
+    <label class="label-text">Choose an email format:</label>
+      
+      <label><input type="radio" name="emailFormat" value="html" > HTML</label>
+      <label><input type="radio" name="emailFormat" value="text" > Text</label>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Submit -->
+    <div class="form-section">
+      <button type="submit" id="order-button">Submit</button>
+    </div>
+
+  </form>
+  </main>
+</body>
+</html>

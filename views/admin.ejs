@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('partials/navbar'); %>
-     
+
   <main>
     <h1>Guestbook Submissions</h1>
 
@@ -27,6 +27,8 @@
             <th>Email</th>
             <th>How We Met</th>
             <th>Message</th>
+            <th>Timestamp</th>
+
           </tr>
         </thead>
         <tbody>
@@ -40,6 +42,7 @@
               <td><%= order.email %></td>
               <td><%= order.meet %></td>
               <td><%= order.message %></td>
+              <td><%= order.timestamp %></td>
             </tr>
           <% }) %>
         </tbody>
