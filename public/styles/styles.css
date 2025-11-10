@@ -1,3 +1,4 @@
+
 body {
     background-color: #f0f0f0; /* Light gray background for the page */
     padding: 20px;
@@ -111,4 +112,193 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #ddd;
+}
+
+/* for navigation page of navbar: */
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;           /* Make links horizontal */
+  justify-content: center; /* Center the items */
+  gap: 2rem;               /* Space between links */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00; /* or any highlight color */
+}
+
+/* for the resume page */
+/* CSS Variables for colors */
+
+:root {
+  --primary: #003366;
+  --secondary: #0055aa;
+  --text: #222;
+  --background: #ffffff;
+
+}
+
+/* body and main styling */
+
+body {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+/* Header Styling */
+
+header {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+
+}
+
+header img { /* For image on the right*/ 
+  float: right;
+  max-width: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10px;
+    
+}
+
+.resume-title {
+  text-align: center; 
+  text-decoration: underline;
+  color: var(--primary);
+  font-size: 28px;
+  margin-bottom: 10px;
+
+}
+
+/* contact info styling */
+
+.summary-list { 
+  list-style: none;          /* remove bullets */
+  display: flex;             /* side by side */
+  justify-content: center;   /* center  group */
+  gap: 2rem;                 /* space between items */
+  padding: 0; 
+  margin-top: 10px;
+
+}
+
+.summary-list a{
+  color: var(--secondary);
+  text-decoration: none;
+
+}
+
+.summary-list a:hover,
+.summary-list a:focus {
+  text-decoration: underline;
+  color: var(--primary);
+
+}
+
+/* Horizontal line Styling */
+
+hr {
+  border: 1px solid var(--primary);
+  margin: 20px 0;
+
+}
+
+/* Layout for Education, Skills and Experience Sections */
+ 
+.resume-container, .experience-container {
+  display: flex;
+  justify-content: space-between; /* separates left and right */
+  align-items: flex-start;        /* align items at the top */
+  gap: 3rem;                      /* space between columns */
+  padding: 20px;
+  
+}
+
+ .left-section, .right-section {
+    width: 45%;
+   
+ }
+
+.left-section h1, .right-section h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: var(--primary);
+
+}
+
+.left-section ul, .right-section ul {
+  list-style: disc;
+  margin-left: 20px;
+
+}
+
+ul li {
+  margin-bottom: 5px;
+
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .resume-container,
+  .experience-container {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    text-align: left;
+
+  }
+
+  header img {
+    float: none;
+    display: block;
+    margin: 0 auto 10px auto;
+
+  }
+
+  .summary-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+  }
+
+  .resume-title {
+    font-size: 24px;
+
+  }
 }
