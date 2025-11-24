@@ -23,20 +23,6 @@ const pool = mysql2.createPool({
     port: process.env.DB_PORT
 }).promise();
 
-
-
-
-// TEST DATABASE ROUTE
-
-app.get('/db-test', async(req, res) => {
-    try {
-        const [rows] = await pool.query('SELECT * FROM contacts');
-        res.send(rows);
-    } catch(err) {
-        console.error('Database error:', err);
-    }
-});
-
 // HOME PAGE
 app.get('/', (req, res) => {
     res.render('index');
@@ -49,64 +35,59 @@ app.get('/contact', (req, res) => {
 
 // PROCESS CONTACT FORM - SAVE TO MYSQL
 app.post('/confirm', async (req, res) => {
-     const { fname, lname, email, message } = req.body;
-            const fullName = `${fname} ${lname}`.trim();
-
+    // 1. Get data from the form (contact.ejs)
+    const {
+        fname, lname, email, message, company,
+        linkedin, meet, other, mailingList, emailFormat
+    } = req.body;
 
     try {
+        // 2. Prepare SQL - Note: "job-title" is skipped because it's not in your DB
         const sql = `
             INSERT INTO contacts 
-  (fname, lname, email, message, company, linkedin, meet, other, mailingList, emailFormat) 
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-`;
+            (fname, lname, email, message, company, linkedin, meet, other, mailingList, emailFormat) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `;
 
-        await pool.execute(sql, [ fname,
-  lname,
-  email,
-  message,
-  company || null,
-  linkedin || null,
-  meet || null,
-  other || null,
-  mailingList ? 1 : 0,
-  emailFormat || null]);
+        // 3. Run Query
+        await pool.execute(sql, [
+            fname || null, 
+            lname || null, 
+            email || null, 
+            message || null,
+            company || null, 
+            linkedin || null, 
+            meet || null, 
+            other || null,
+            mailingList ? 1 : 0, // Convert checkbox "on" to 1
+            emailFormat || null
+        ]);
 
+        // 4. Render confirmation page
         res.render('confirm', { details: { fname, lname, email, message } });
 
     } catch (err) {
         console.error('Error saving contact:', err);
-        res.status(500).send('Error saving contact submission.');
-    }
-});
-app.post("/submit", async (req, res) => {
-    const { name, email, message } = req.body;
-
-    const sql = "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)";
-
-    try {
-        await pool.execute(sql, [name, email, message]);
-        res.render("confirmation", { name, email, message });
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Database error");
+        res.status(500).send('Error saving contact submission: ' + err.message);
     }
 });
 
 // ADMIN PAGE - SHOW ALL SUBMISSIONS
 app.get('/admin', async (req, res) => {
     try {
-        const [contacts] = await pool.query(
-            'SELECT * FROM contacts ORDER BY created_at DESC'
+        // FIX: Changed 'orders' to 'contacts' and removed the double "BY BY" typo
+        const [rows] = await pool.query(
+            'SELECT * FROM contacts ORDER BY timestamp DESC'
         );
 
-        res.render('admin', { contacts });
+        // FIX: We are passing the data as "contacts", not "orders"
+        res.render('admin', { contacts: rows }); 
 
     } catch (err) {
         console.error('Admin DB error:', err);
+        res.status(500).send('Error loading admin page: ' + err.message);
     }
 });
-
-
 
 // START SERVER
 app.listen(PORT, () => {

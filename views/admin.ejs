@@ -12,7 +12,7 @@
   <main>
     <h1>Guestbook Submissions</h1>
 
-    <% if (orders.length === 0) { %>
+    <% if (contacts.length === 0) { %>
       <p>No submissions yet.</p>
     <% } else { %>
       <!--Added table for the submissions of all the data-->
@@ -32,11 +32,11 @@
           </tr>
         </thead>
         <tbody>
-          <% orders.forEach(order => { %>
+          <% contacts.forEach(order => { %>
             <tr>
               <td><%= order.fname %></td>
               <td><%= order.lname %></td>
-              <td><%= order['job-title'] %></td>
+             <!-- <td><%= order['job-title'] %></td> -->
               <td><%= order.company %></td>
               <td><a href="<%= order.linkedin %>" target="_blank"><%= order.linkedin %></a></td>
               <td><%= order.email %></td>
