@@ -42,7 +42,7 @@ app.post('/confirm', async (req, res) => {
     } = req.body;
 
     try {
-        // 2. Prepare SQL - Note: "job-title" is skipped because it's not in your DB
+        // 2. Prepare SQL 
         const sql = `
             INSERT INTO contacts 
             (fname, lname, email, message, company, linkedin, meet, other, mailingList, emailFormat) 
@@ -75,12 +75,11 @@ app.post('/confirm', async (req, res) => {
 // ADMIN PAGE - SHOW ALL SUBMISSIONS
 app.get('/admin', async (req, res) => {
     try {
-        // FIX: Changed 'orders' to 'contacts' and removed the double "BY BY" typo
+        // Changed 'orders' to 'contacts' and 
         const [rows] = await pool.query(
             'SELECT * FROM contacts ORDER BY timestamp DESC'
         );
 
-        // FIX: We are passing the data as "contacts", not "orders"
         res.render('admin', { contacts: rows }); 
 
     } catch (err) {
