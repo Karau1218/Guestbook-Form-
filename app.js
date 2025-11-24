@@ -64,12 +64,12 @@ app.post('/confirm', async (req, res) => {
   lname,
   email,
   message,
-  company,
-  linkedin,
-  meet,
-  other,
+  company || null,
+  linkedin || null,
+  meet || null,
+  other || null,
   mailingList ? 1 : 0,
-  emailFormat]);
+  emailFormat || null]);
 
         res.render('confirm', { details: { fname, lname, email, message } });
 
